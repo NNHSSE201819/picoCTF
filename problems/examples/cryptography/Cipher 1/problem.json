@@ -1,0 +1,9 @@
+{
+  "name": "Cipher 1",
+  "category": "Cryptography",
+  "description": "The first type of cipher. It's a simple one.",
+  "score" : 30,
+  "hints": ["What's up, Brutus?"],
+  "author": "EC",
+  "organization": "NNHS"
+}
