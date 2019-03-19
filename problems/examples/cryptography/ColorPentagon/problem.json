@@ -1,0 +1,9 @@
+{
+  "name": "ColorPentagon",
+  "category": "Steganography",
+  "description": "Exploit the {{url_for(\"stegEasy2.png\", display=\"Text File\")}} found here: {{directory}}.",
+  "score" : 200,
+  "hints": ["Tap Dancing"],
+  "author": "EC",
+  "organization": "NNHS"
+}

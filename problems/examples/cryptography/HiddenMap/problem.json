@@ -1,0 +1,9 @@
+{
+  "name": "ColorSquare",
+  "category": "Steganography",
+  "description": "Exploit the {{url_for(\"steganographyMedium.PNG\", display=\"Text File\")}} found here: {{directory}}.",
+  "score" : 200,
+  "hints": ["Ryan Guan Big"],
+  "author": "EC",
+  "organization": "NNHS"
+}
