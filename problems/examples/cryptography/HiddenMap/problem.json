@@ -1,9 +1,9 @@
 {
-  "name": "ColorSquare",
+  "name": "HiddenMap",
   "category": "Steganography",
-  "description": "Exploit the {{url_for(\"steganographyMedium.PNG\", display=\"Text File\")}} found here: {{directory}}.",
+  "description": "Find the flag in this {{url_for(\"map.png\", display=\"Image\")}} found here: {{directory}}.",
   "score" : 200,
-  "hints": ["Ryan Guan Big"],
+  "hints": ["Don't Compare"],
   "author": "EC",
   "organization": "NNHS"
 }
