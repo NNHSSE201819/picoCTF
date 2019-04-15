@@ -1,2 +1,2 @@
 from hacksport.problem_templates import CompiledBinary
-Problem = CompiledBinary(sources=["myproblem.cpp"])
+Problem = CompiledBinary(sources=["vuln.c"])
