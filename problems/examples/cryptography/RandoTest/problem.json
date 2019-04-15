@@ -1,7 +1,7 @@
 {
   "name": "RandoTest",
   "category": "Testing",
-  "description": "Exploit the {{url_for(\"myproblem.cpp\", display=\"myproblem.cpp\")}} found here: {{directory}}.",
+  "description": "Exploit the {{url_for(\"\myproblem.cpp\", display=\"\myproblem.cpp\")}} found here: {{directory}}.",
   "score" : 50,
   "hints": [""],
   "author": "EC",
