@@ -6,7 +6,7 @@
 
 
 void testPrint(){
-    printf({{flag}});
+    printf("FLAG.TXT");
 }
 
 int main(int argc, char **argv){
