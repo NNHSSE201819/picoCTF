@@ -1,9 +1,0 @@
-{
-  "name": "Test 1",
-  "category": "Binary Exploitation",
-  "description": "to test the system",
-  "score" : 50,
-  "hints": ["This is a test."],
-  "author": "Test",
-  "organization": "NNHS"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Hello",
-  "category": "Binary Exploitation",
-  "description": "Type Hello, World!",
-  "score" : 50,
-  "hints": ["Type Hello, World! as the flag"],
-  "author": "EC",
-  "organization": "NNHS"
-}

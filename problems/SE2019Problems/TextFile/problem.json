@@ -1,9 +1,0 @@
-{
-  "name": "TextFile",
-  "category": "test-problems",
-  "description": "Exploit the {{url_for(\"test.txt\", display=\"Text File\")}} found here: {{directory}}.",
-  "score" : 50,
-  "hints": ["Open the text file"],
-  "author": "EC",
-  "organization": "NNHS"
-}
