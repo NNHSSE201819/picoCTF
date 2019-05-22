@@ -15,8 +15,11 @@ The shell server also allows administrators (with a special login) to add proble
 ## Admin, setting up the server for self or student use
 
 Prerequisites:
+
 -- VirtualBox found here: https://www.virtualbox.org/wiki/Downloads
+
 -- Vagrant found here: https://www.vagrantup.com/downloads.html
+
 -- Repository clone from Github
 when cloning a repository with a fresh install of GitHub Desktop,
 replace the portion of the local path that starts: 
@@ -58,10 +61,14 @@ Note: At this point in time the server is running and only accessible off of loc
 ## Student, user to access server and solve problem
 
 Prerequisites:
+
 -- Access to terminal
+
 -- Access to multiple browsers
+
 -- The computer running the server must be on the same network as the computer that wants to access the server
 Follow the steps detailed in the file “Connecting to the CTF Server-Linux Mac” found in the folder “SE1819-resources” to set up a tunnel and access the website. 
+
 Note, you will have to sign in using the computer login information of the computer that is running the server. 
 
 
