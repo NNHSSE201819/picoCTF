@@ -4,10 +4,15 @@
 The goal of the CTF (Capture the Flag) is to be a self-contained district 203 specific competition for the use of Cybersecurity class(es). Upon successful deployment all users will be able to access the CTF website, register or login into a personal account, and earn points by solving problems related to cybersecurity. The website should keep track of individual users’ progress across multiple sessions. Those with administrative accounts will be able to add, package, deploy, and enable/disable problems. They can also create classrooms and oversee the progress of other users. Detailed explanation for functions of all options available on the website can be found in the folder “SE1819-resources” under “Button Reference” . 
 
 ## Basic Structure:
+
 -- Ansible is the provisioning system that facilitates the deployment for testing and development and eventually cloud usage if it was      the CTF was to be made public on the web through Amazon Web Services. 
+
 -- Vagrant deploys the site.Vagrant launches the virtualboxes, starting the servers and making the website accessible to users
+
 -- Virtualbox actually runs the site.
+
 -- The web server exists in a virtual machine (computer in a physical computer) and connects to another virtual machine, the shell  server. 
+
 -- The shell server allows users to test problem solutions without leaving the site. 
 The shell server also allows administrators (with a special login) to add problems to the web server for users to solve.
 
@@ -29,7 +34,9 @@ for example, the final local path for me could be: C:\Users\gcschmit\GitHub\obje
 
 ### Platform Specifications:
 64-bit for dual Vagrant and Virtualbox compatibility
+
 32 bit will be supported by Virtualbox until July 2020
+
 Don’t use Raspberry Pi
 
 
@@ -74,32 +81,53 @@ Note, you will have to sign in using the computer login information of the compu
 
 ## Writing Problems:
 1. Follow the instructions here (https://github.com/picoCTF/picoCTF/wiki/Adding-Your-Own-Content) on the specifications required for a -problem and how to write the problem.json file and the challenge.py file.
+
 2. The problem.json file specifies name, category, description, score, hints, author, and organization of each problem. Refer to any of the problems we wrote or example problems for an example of the problem.json file. More info: https://github.com/picoCTF/picoCTF/wiki/Problem.json
+
 3. The challenge.py file specifies the static flag, flag file, and source code. Refer to any of the problems we wrote or example problems for an example of the challenge.py file.More info: https://github.com/picoCTF/picoCTF/wiki/Challenge.py
+
 4. To create a static flag, reference the challenge.py file in picoCTF/problems/SE2019Problems/Cipher1/
+
 5. To create a random flag, reference the vuln.c file in picoCTF/problems/SE2019Problems/RandoTest/. (there are further instructions for random flags later in the README)
+
 6. To link a file in the problem description, refer to the the problem.json file in picoCTF/problems/SE2019Problems/RandoTest/. The file is embedded in the description line.
 
 ## How to add a problem to picoCTF:
 1.Go to shell 
   a. Can do this on the website, the embedded shell OR use the terminal
-Login: vagrant
-Password: vagrant
-Cd ..
-Cd .. 
-Cd picoCTF/problems/[subfolder]/[optional sub-sub folder]/
-Essentially need to navigate to location/containing folder of the file, 
-Sudo shell_manager package [file name]
-Sudo dpkg -i nnhs-[file name, numbers].deb
-Use “ls” command to find full debian file name
-Sudo shell_manger deploy [ProblemName]
- NOW, navigate from the shell or terminal (where ever you were entering the commands) and got to the Management page on the website (this requires you to be signed into the admin account). 
-Go to the “Shell Server” management sub page
-Press the “Update” button towards the bottom of the screen
-Press the “Load Deployment” button to the right of the “Update” option
-NOW, navigate to the Manage Problems page
-Enable Desired Problem(s)
-Celebrate
+
+2. Login: vagrant
+
+3. Password: vagrant
+
+4. Cd ..
+
+5. Cd .. 
+
+6. Cd picoCTF/problems/[subfolder]/[optional sub-sub folder]/
+
+  a. Essentially need to navigate to location/containing folder of the file, 
+
+7. Sudo shell_manager package [file name]
+
+8. Sudo dpkg -i nnhs-[file name, numbers].deb
+
+  a. Use “ls” command to find full debian file name
+
+9. Sudo shell_manger deploy [ProblemName]
+
+10. NOW, navigate from the shell or terminal (where ever you were entering the commands) and got to the Management page on the website (this requires you to be signed into the admin account). 
+
+11. Go to the “Shell Server” management sub page
+
+12. Press the “Update” button towards the bottom of the screen
+
+13. Press the “Load Deployment” button to the right of the “Update” option
+
+14. NOW, navigate to the Manage Problems page
+
+15. Enable Desired Problem(s)
+
 
 ## Random Flag:
 Wherever you want the flag to be, insert {{flag}} (if you want it to be a string, put it in quotes)
