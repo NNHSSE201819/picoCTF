@@ -29,16 +29,27 @@ for example, the final local path for me could be: C:\Users\gcschmit\GitHub\obje
 32 bit will be supported by Virtualbox until July 2020
 Don’t use Raspberry Pi
 
+
 1.Open up your computer’s terminal
+
 2. Navigate to the location of the picoCTF folder on your computer (using the terminal)
+
   a. Option 1. Use cd and the path name of the picoCTF folder
+
   b. Option 2. Open github desktop, open up the picoCTF repository, select the repository option on the top menu bar, select the option that says “open in terminal”
+
 3. In the terminal type the command “vagrant up” hit enter
+  
   a. It should now be “provisioning”, running through all the files and preparing them 
+  
   b. This step takes some time to complete, be patient
+  
   c. Vagrant is running when the terminal gives a new line for a command to be entered
+
 4. Open your preferred browser (we used Chrome) and open a new tab
+
 5. Enter in the port address for the web site: http://192.168.2.2/
+
 6. The site can now be navigated freely, in the folder “SE1819-resources” the file “Button Reference” has information on what the options on the website do.
 
 Note: At this point in time the server is running and only accessible off of localhost, for use on multiple different devices look to the steps for a student.
