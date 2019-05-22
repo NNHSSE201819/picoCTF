@@ -1,3 +1,111 @@
+# district 203 picoCTF specific
+
+#Project Overview:
+The goal of the CTF (Capture the Flag) is to be a self-contained district 203 specific competition for the use of Cybersecurity class(es). Upon successful deployment all users will be able to access the CTF website, register or login into a personal account, and earn points by solving problems related to cybersecurity. The website should keep track of individual users’ progress across multiple sessions. Those with administrative accounts will be able to add, package, deploy, and enable/disable problems. They can also create classrooms and oversee the progress of other users. Detailed explanation for functions of all options available on the website can be found in the folder “SE1819-resources” under “Button Reference” . 
+
+#Basic Structure:
+ Ansible is the provisioning system that facilitates the deployment for testing and development and eventually cloud usage if it was the CTF was to be made public on the web through Amazon Web Services. 
+Vagrant deploys the site. 
+Vagrant launches the virtualboxes, starting the servers and making the website accessible to users
+Virtualbox actually runs the site.
+ The web server exists in a virtual machine (computer in a physical computer) and connects to another virtual machine, the shell server. The shell server allows users to test problem solutions without leaving the site. 
+The shell server also allows administrators (with a special login) to add problems to the web server for users to solve.
+
+
+##Admin, setting up the server for self or student use
+
+Prerequisites:
+VirtualBox found here: https://www.virtualbox.org/wiki/Downloads
+Vagrant found here: https://www.vagrantup.com/downloads.html
+Repository clone from Github
+when cloning a repository with a fresh install of GitHub Desktop,
+replace the portion of the local path that starts: \\sd203.org\dfs-root$\HS\NNHS\Student\
+with: C:\Users\
+for example, the final local path for me could be: C:\Users\gcschmit\GitHub\objects-gcschmit
+
+#Platform Specifications:
+64-bit for dual Vagrant and Virtualbox compatibility
+32 bit will be supported by Virtualbox until July 2020
+Don’t use Raspberry Pi
+
+Open up your computer’s terminal
+Navigate to the location of the picoCTF folder on your computer (using the terminal)
+Option 1. Use cd and the path name of the picoCTF folder
+Option 2. Open github desktop, open up the picoCTF repository, select the repository option on the top menu bar, select the option that says “open in terminal”
+In the terminal type the command “vagrant up” hit enter
+It should now be “provisioning”, running through all the files and preparing them 
+This step takes some time to complete, be patient
+Vagrant is running when the terminal gives a new line for a command to be entered
+Open your preferred browser (we used Chrome) and open a new tab
+Enter in the port address for the web site: http://192.168.2.2/
+The site can now be navigated freely, in the folder “SE1819-resources” the file “Button Reference” has information on what the options on the website do.
+
+Note: At this point in time the server is running and only accessible off of localhost, for use on multiple different devices look to the steps for a student.
+
+
+##Student, user to access server and solve problem
+
+Prerequisites:
+Access to terminal
+Access to multiple browsers
+The computer running the server must be on the same network as the computer that wants to access the server
+Follow the steps detailed in the file “Connecting to the CTF Server-Linux Mac” found in the folder “SE1819-resources” to set up a tunnel and access the website. 
+Note, you will have to sign in using the computer login information of the computer that is running the server. 
+
+
+##Writing Problems:
+Follow the instructions here (https://github.com/picoCTF/picoCTF/wiki/Adding-Your-Own-Content) on the specifications required for a problem and how to write the problem.json file and the challenge.py file.
+The problem.json file specifies name, category, description, score, hints, author, and organization of each problem. Refer to any of the problems we wrote or example problems for an example of the problem.json file.
+More info: https://github.com/picoCTF/picoCTF/wiki/Problem.json
+The challenge.py file specifies the static flag, flag file, and source code. Refer to any of the problems we wrote or example problems for an example of the challenge.py file.
+More info: https://github.com/picoCTF/picoCTF/wiki/Challenge.py
+To create a static flag, reference the challenge.py file in picoCTF/problems/SE2019Problems/Cipher1/
+To create a random flag, reference the vuln.c file in picoCTF/problems/SE2019Problems/RandoTest/. (there are further instructions for random flags later in the README)
+To link a file in the problem description, refer to the the problem.json file in picoCTF/problems/SE2019Problems/RandoTest/. The file is embedded in the description line.
+
+##How to add a problem to picoCTF:
+Go to shell 
+Can do this on the website, the embedded shell OR use the terminal
+Login: vagrant
+Password: vagrant
+Cd ..
+Cd .. 
+Cd picoCTF/problems/[subfolder]/[optional sub-sub folder]/
+Essentially need to navigate to location/containing folder of the file, 
+Sudo shell_manager package [file name]
+Sudo dpkg -i nnhs-[file name, numbers].deb
+Use “ls” command to find full debian file name
+Sudo shell_manger deploy [ProblemName]
+ NOW, navigate from the shell or terminal (where ever you were entering the commands) and got to the Management page on the website (this requires you to be signed into the admin account). 
+Go to the “Shell Server” management sub page
+Press the “Update” button towards the bottom of the screen
+Press the “Load Deployment” button to the right of the “Update” option
+NOW, navigate to the Manage Problems page
+Enable Desired Problem(s)
+Celebrate
+
+##Random Flag:
+Wherever you want the flag to be, insert {{flag}} (if you want it to be a string, put it in quotes)
+It should automatically be replaced
+The flag.txt file (containing only {{flag}}) should be automatically generated and given protected file status
+
+##Software Engineering 2018-2019 Student Created Problems:
+
+We have added all the problems we wrote ourselves to a folder in the problems folder called “SE2019Problems”. There is also an “examples” folder with the sample problems from picoCTF.
+
+List of Problems
+Name: Color Pentagon
+How to Solve: This problem has a static flag which is encoded in the pattern of the pentagons. Inside this pattern is a message in morse code. The only thing you need to pay attention to is the shape within the pentagon, the colors or orientation do not mean anything. One of the three “centers” (empty, pentagon, circle) represents a space between words, another represents a dot, and the last symbol represents a dash. 
+Name: Hidden Map
+How to Solve: This problem has a static flag which is hidden somewhere in the image. Download the image and open it in a photo editing application like Photoshop, this is what was used when creating and testing the image. In Photoshop go to the images tab and explore different options under Adjustments. Be sure to look at the small details after adjusting, it may not initially seem like there is a clear black and white way to solve the problem but maybe by adjusting a predominant color value the flag will appear. 
+Name: Cipher 1
+How to Solve: Caesar Cipher, shift original message left 5 letters to get key “welcome to cybersecurity”. This is a very basic problem and shouldn’t be worth too many points.
+Name: RandoTest
+RANDOM flag problem. The source file “vuln.c” contains “{{flag}}” which is replaced with a random string which can be correctly submitted as the flag.
+Name: ColorSquare
+Static flag problem. From left to right, top to bottom, the red value of the RGB value of each square refers to the ASCII code of each character in the flag. For example, the 3rd square has an RGB value of 65, 66, 50. Thus, the 3rd character is “A” because the ASCII of “A” is 65.
+
+
 # picoCTF
 
 The picoCTF platform is the infrastructure which is used to run
