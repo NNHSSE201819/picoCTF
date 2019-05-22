@@ -1,4 +1,4 @@
-# district 203 picoCTF specific
+# District 203 picoCTF Specific
 
 ## Project Overview:
 The goal of the CTF (Capture the Flag) is to be a self-contained district 203 specific competition for the use of Cybersecurity class(es). Upon successful deployment all users will be able to access the CTF website, register or login into a personal account, and earn points by solving problems related to cybersecurity. The website should keep track of individual users’ progress across multiple sessions. Those with administrative accounts will be able to add, package, deploy, and enable/disable problems. They can also create classrooms and oversee the progress of other users. Detailed explanation for functions of all options available on the website can be found in the folder “SE1819-resources” under “Button Reference” . 
