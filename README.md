@@ -33,13 +33,13 @@ with: C:\Users\
 for example, the final local path for me could be: C:\Users\gcschmit\GitHub\objects-gcschmit
 
 ### Platform Specifications:
-64-bit for dual Vagrant and Virtualbox compatibility
+--64-bit for dual Vagrant and Virtualbox compatibility
 
-32 bit will be supported by Virtualbox until July 2020
+--32 bit will be supported by Virtualbox until July 2020
 
-Don’t use Raspberry Pi
+--Don’t use Raspberry Pi
 
-
+## Admin Deployment Steps
 1.Open up your computer’s terminal
 
 2. Navigate to the location of the picoCTF folder on your computer (using the terminal)
