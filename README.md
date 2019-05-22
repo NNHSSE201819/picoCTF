@@ -93,7 +93,7 @@ Note, you will have to sign in using the computer login information of the compu
 6. To link a file in the problem description, refer to the the problem.json file in picoCTF/problems/SE2019Problems/RandoTest/. The file is embedded in the description line.
 
 ## How to add a problem to picoCTF:
-1.Go to shell 
+1. Go to shell 
   a. Can do this on the website, the embedded shell OR use the terminal
 
 2. Login: vagrant
@@ -140,18 +140,23 @@ We have added all the problems we wrote ourselves to a folder in the problems fo
 
 ### List of Problems
 Name: Color Pentagon
+
 How to Solve: This problem has a static flag which is encoded in the pattern of the pentagons. Inside this pattern is a message in morse code. The only thing you need to pay attention to is the shape within the pentagon, the colors or orientation do not mean anything. One of the three “centers” (empty, pentagon, circle) represents a space between words, another represents a dot, and the last symbol represents a dash. 
 
 Name: Hidden Map
+
 How to Solve: This problem has a static flag which is hidden somewhere in the image. Download the image and open it in a photo editing application like Photoshop, this is what was used when creating and testing the image. In Photoshop go to the images tab and explore different options under Adjustments. Be sure to look at the small details after adjusting, it may not initially seem like there is a clear black and white way to solve the problem but maybe by adjusting a predominant color value the flag will appear. 
 
 Name: Cipher 1
+
 How to Solve: Caesar Cipher, shift original message left 5 letters to get key “welcome to cybersecurity”. This is a very basic problem and shouldn’t be worth too many points.
 
 Name: RandoTest
+
 RANDOM flag problem. The source file “vuln.c” contains “{{flag}}” which is replaced with a random string which can be correctly submitted as the flag.
 
 Name: ColorSquare
+
 Static flag problem. From left to right, top to bottom, the red value of the RGB value of each square refers to the ASCII code of each character in the flag. For example, the 3rd square has an RGB value of 65, 66, 50. Thus, the 3rd character is “A” because the ASCII of “A” is 65.
 
 
