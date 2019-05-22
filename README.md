@@ -39,7 +39,7 @@ for example, the final local path for me could be: C:\Users\gcschmit\GitHub\obje
 
 --Don’t use Raspberry Pi
 
-## Admin Deployment Steps
+### Admin Deployment Steps
 1.Open up your computer’s terminal
 
 2. Navigate to the location of the picoCTF folder on your computer (using the terminal)
